@@ -1,0 +1,21 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
+  <div class="form-group">
+    <label for="concepto">Nombre</label>
+    <input type="email" class="form-control" id="concepto" aria-describedby="emailHelp" name="concepto" [(ngModel)]="factura.concepto">
+    <small id="emailHelp" class="form-text text-muted">Introduce tu concepto</small><br>
+    <small class="form-text text-muted">Factura Nº: {{factura._id}}</small>
+  </div>
+  <div class="form-group">
+    <label for="cif">CIF</label>
+    <input type="text" class="form-control" id="cif" name="cif" [(ngModel)]="factura.cif">
+  </div>
+  <div class="form-group">
+    <label for="importe">Importe</label>
+    <input type="number" class="form-control" id="importe" name="importe" [(ngModel)]="factura.importe">
+  </div>
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-danger" (click)="navigateBack()">Cancelar</button>
+    <button type="button" class="btn btn-warning" [routerLink]="['/inicio']" routerLinkActive="router-link-active" ><i class="fas fa-home"></i></button>
+    <button type="submit" class="btn btn-success">{{txtBoton}}</button>
+  </div>
+</form>

@@ -1,0 +1,22 @@
+<a [routerLink]="['/factura']" class="btn btn-primary">Crear cuenta</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">CIF</th>
+      <th scope="col">Importe</th>
+      <th scope="col">Concepto</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let f of fact">
+      <th scope="row">{{f.cif}}</th>
+      <td>{{f.importe}}</td>
+      <td>{{f.concepto}}</td>
+      <td>
+        <a [routerLink]="['/factura', f._id]"><i class="far fa-edit"></i></a>
+        <i class="far fa-trash-alt" (click)="delete(f._id)"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
